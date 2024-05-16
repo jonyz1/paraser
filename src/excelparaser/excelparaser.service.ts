@@ -34,7 +34,7 @@ async parseExcel() {
     let good= new goodsservice()
     let service= new goodsservice()
    
-    // supliers= allfile[i]
+    supliers= allfile[i]
     console.log("created entitydata")
     suppliers.push(supliers)
     let holder=allfile[i].goods_category.split(" ")
