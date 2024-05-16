@@ -33,13 +33,14 @@ async parseExcel() {
     let supliers:createdto;
     let good= new goodsservice()
     let service= new goodsservice()
-    supliers= allfile[i]
+   
+    // supliers= allfile[i]
     console.log("created entitydata")
     suppliers.push(supliers)
     let holder=allfile[i].goods_category.split(" ")
-    await this.saver(good,supliers,this.checker(holder),businessArea,"goods_category")
+    await this.saver(good,allfile[i],this.checker(holder),businessArea,"goods_category")
     let holderserv=allfile[i].services_category.split(" ")
-    await this.saver(service,supliers,this.checker(holderserv),businessArea,"services_category")
+    await this.saver(service,allfile[i],this.checker(holderserv),businessArea,"services_category")
 
 }
 
@@ -48,7 +49,7 @@ async parseExcel() {
 
 }
 
-async saver(good:goodsservice,supliers:createdto,check:any,businessArea:any[],name:string){
+async saver(good:goodsservice,supliers:any,check:any,businessArea:any[],name:string){
     if( check){
         good.from=check==null?null:1 
         good.to=check
