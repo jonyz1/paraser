@@ -70,8 +70,8 @@ export class supplier{
     @Column({nullable:true})
     msme_type:string
 
-    // @OneToMany(() => goodsservice, (good) => good.suplier)
-    // catagoreis:goodsservice[]
+    @OneToMany(() => goodsservice, (good) => good.suplier)
+    catagoreis:goodsservice[]
    
 
     
